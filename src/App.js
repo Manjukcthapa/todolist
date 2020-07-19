@@ -8,8 +8,8 @@ class App extends React.Component {
       <div className= "app">
       <header>
         <form id="todo-form">
-         <input type="text" placeholder="Enter Text"></input>
-         <button type="submit">Submit</button>
+         <input  className="input" type="text" placeholder="Enter Text"></input>
+         <button  className="button" type="submit">Submit</button>
         </form>
       </header>
       </div>
