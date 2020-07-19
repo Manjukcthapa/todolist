@@ -6,6 +6,7 @@ import "./App.css";
 class App extends React.Component {
   state = {
     todos: [],
+    TodoShow:"all"
   };
 
   addTodo = (todo) => {
@@ -30,13 +31,28 @@ class App extends React.Component {
     });
   };
 
+  updateTodoToShow = s => {
+    this.setState({
+      todoToShow: s
+    });
+  };
+
   render() {
+    let todos = [];
+
+    if (this.state.todoToShow === "all") {
+      todos = this.state.todos;
+    } else if (this.state.todoToShow === "active") {
+      todos = this.state.todos.filter(todo => !todo.complete);
+    } else if (this.state.todoToShow === "complete") {
+      todos = this.state.todos.filter(todo => todo.complete);
+    }
+
     return (
       <div>
         <TodoForm onSubmit={this.addTodo} />
-        {/* {JSON.stringify(this .state.todos)} */}
-
-        {this .state.todos.map((todo) => (
+        
+        {todos.map((todo) => (
           <Todo
             key={todo.id}
             toggleComplete={() => this.toggleComplete(todo.id)}
@@ -46,6 +62,9 @@ class App extends React.Component {
          <div>
           todos left: {this.state.todos.filter(todo => !todo.complete).length}
         </div>
+        <button onClick={() => this.updateTodoToShow("all")}>All</button>
+        <button onClick={() => this.updateTodoToShow("active")}>Active</button>
+        <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
       </div>
     );
   }
