@@ -43,6 +43,9 @@ class App extends React.Component {
             todo={todo}
           />
         ))}
+         <div>
+          todos left: {this.state.todos.filter(todo => !todo.complete).length}
+        </div>
       </div>
     );
   }
