@@ -1,50 +1,24 @@
 import React from "react";
-import logo from "./logo.svg";
+import TodoForm from "./TodoForm";
 import "./App.css";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      currentItem: {
-        text: "",
-        key: "",
-      },
-    };
-    this.handleInput=this.handleInput.bind(this);
-    this.addItem=this.addItem.bind(this)
+  state = {
+    todos:[]
   }
-  handleInput(e){
+
+  addTodo = (todo) => {
+  
     this.setState({
-      currentItem:{
-        text: e.target.value,
-        key: Date.now()
-      }
+      todos:[todo, ...this.state.todos]
     })
-  }
-  addItem(e){
-    e.preventDefault();
-    const newItem = this.state.currentItem;
-    console.log(newItem)
   }
   render() {
     return (
-      <div className="app">
-        <header>
-          <form id="todo-form" onSubmit={this.addItem}>
-            <input
-              className="input"
-              type="text"
-              value={this.state.currentItem.text}
-              onChange={this.handleInput}
-              placeholder="Enter Text"
-            ></input>
-            <button className="button" type="submit">
-              Submit
-            </button>
-          </form>
-        </header>
+      <div>
+        <TodoForm onSubmit={this.addTodo}/>
+        {JSON.stringify(this .state.todos)}
+       {/* {this.state.todos.map(todo =>(<div key={todo.id}></div>))} */}
       </div>
     );
   }
