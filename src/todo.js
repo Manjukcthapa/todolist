@@ -8,6 +8,6 @@ export default (props) => (
   }}
    onClick={props.toggleComplete}>{props.todo.text}
    </div>
-   <button>x</button>
+   <button onClick={props.onDelete}>x</button>
    </div>
 );

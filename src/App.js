@@ -37,6 +37,12 @@ class App extends React.Component {
     });
   };
 
+  handleDeleteTodo = id => {
+this.setState({
+  todos:this.state.todos.filter(todo => todo.id != id)
+})
+  }
+
   render() {
     let todos = [];
 
@@ -51,11 +57,12 @@ class App extends React.Component {
     return (
       <div>
         <TodoForm onSubmit={this.addTodo} />
-        
+
         {todos.map((todo) => (
           <Todo
             key={todo.id}
             toggleComplete={() => this.toggleComplete(todo.id)}
+            onDelete={() => this.handleDeleteTodo(todo.id)}
             todo={todo}
           />
         ))}
