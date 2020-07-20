@@ -43,6 +43,12 @@ this.setState({
 })
   }
 
+  removeallComplete = id => [
+    this.setState({
+      todos:this.state.todos.filter(todo => !todo.complete)
+    })
+  ]
+
   render() {
     let todos = [];
 
@@ -72,6 +78,7 @@ this.setState({
         <button onClick={() => this.updateTodoToShow("all")}>All</button>
         <button onClick={() => this.updateTodoToShow("active")}>Active</button>
         <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
+        <button onClick={this.removeallComplete}>Remove all Completed</button>
       </div>
     );
   }
