@@ -39,6 +39,35 @@ export default () => (
 };
    </p>
  </div>
+ <div>
+   <h1>Factorialize a Number</h1>
+   <h1>Return the factorial of the provided integer.</h1>
+   <h1>function factorialize(num) {
+  //create  the total variable
+  let total = 1
+  // Start the for loop at 1.
+  // Run the loop as long as i is less than or equal to num.
+  // (So when num = 0, i is never less or equal to num, and the
+  //  loop never runs).
+  // Increment i by one each time the loop runs.
+  for (let i = 1; i <= num; i++) {
+    // Multiply the total by i until we reach num.
+    // Save the product as the variable total each time.
+    // This can also be written: total = total * i.
+    total *= i
+    //                  total      i
+    // 1st run: total =   1     *  1         total = 1
+    // 2nd run: total =   1     *  2         total = 2
+    // 3rd run: total =   2     *  3         total = 6
+    // 4th run: total =   6     *  4         total = 24
+    // 5th run: total =   24    *  5         total = 120
+  }
+  // return total as our answer
+  return total;
+}
+
+factorialize(5);</h1>
+ </div>
 
 </div>
 )
