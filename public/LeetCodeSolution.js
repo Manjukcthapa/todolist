@@ -111,5 +111,19 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
   </p>
   </div>
+  <div>
+    <p></p>
+    <p> // Step 1. Create an empty string that will host the repeated string
+  var repeatedString = "";
+
+  // Step 2. Set the While loop with (times > 0) as the condition to check
+  while (times > 0) { // As long as times is greater than 0, the statement is executed
+    // The statement
+    repeatedString += string; // Same as repeatedString = repeatedString + string;
+    times--; // Same as times = times - 1;</p>
+    // Step 3. Return the repeated string
+  return repeatedString; // "abcabcabc"
+}
+  </div>
 </div>
 )
