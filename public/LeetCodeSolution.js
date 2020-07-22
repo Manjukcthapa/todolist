@@ -89,5 +89,27 @@ var words = str.split(' ');
 }
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
+<div>
+  <p>Return Largest Numbers in Arrays</p>
+  <p>
+  function largestOfFour(arr) {
+   // Create an empty array that will eventually hold all
+  // of the largest numbers
+  let answer = []
+  // Go through each array using bracket notation to access them:
+  // arr[i]. Use Math.max() to pick out the largest number in each
+  // array. The spread operator "..." will make the elements
+  // of arr[i] be the arguments of Math.max().
+  // We are pushing each highest number to our answer array.
+  for (let i = 0; i < arr.length; i++) {
+    answer.push(Math.max(...arr[i]))
+  }
+  // Return answer, the array of the largest numbers.
+  return answer
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+  </p>
+  </div>
 </div>
 )
