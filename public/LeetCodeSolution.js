@@ -157,5 +157,11 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
 // test here
 sym([1, 2, 3], [5, 2, 1, 4]);</p>
   </div>
+  <div>
+    <p>. Reverse String</p>
+    <p>var reverseString = function(s) {
+return s.reverse();
+};</p>
+  </div>
 </div>
 )
