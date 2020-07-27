@@ -63,7 +63,7 @@ this.setState({
     return (
       <div>
         <TodoForm onSubmit={this.addTodo} />
-
+        
         {todos.map((todo) => (
           <Todo
             key={todo.id}
@@ -72,13 +72,14 @@ this.setState({
             todo={todo}
           />
         ))}
-         <div>
-          todos left: {this.state.todos.filter(todo => !todo.complete).length}
-        </div>
+        todos left: {this.state.todos.filter(todo => !todo.complete).length}
+        
         <button onClick={() => this.updateTodoToShow("all")}>All</button>
         <button onClick={() => this.updateTodoToShow("active")}>Active</button>
         <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
         <button onClick={this.removeallComplete}>Remove all Completed</button>
+         
+         
       </div>
     );
   }
