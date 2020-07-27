@@ -1,5 +1,6 @@
 import React from "react";
 import shortid from "shortid"
+import "./todo.css";
 
 class TodoForm extends React.Component {
   state = {
@@ -27,8 +28,8 @@ handleSubmit = (e) => {
   render() {
     return (
       <div className="app">
-        <form onSubmit = {this.handleSubmit}>
-        <input
+        <form  onSubmit = {this.handleSubmit}>
+        <input 
         name="text"
           value={this.state.text}
           onChange={this.handleChange}
