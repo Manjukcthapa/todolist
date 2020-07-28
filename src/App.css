@@ -34,3 +34,12 @@ outline:none;
   color:white;
 }
 
+.wholediv{
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+  margin-left: 400px;
+ 
+ 
+}
+

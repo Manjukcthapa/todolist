@@ -6,7 +6,7 @@ import "./App.css";
 class App extends React.Component {
   state = {
     todos: [],
-    TodoShow:"all"
+    TodoShow: "all",
   };
 
   addTodo = (todo) => {
@@ -31,23 +31,23 @@ class App extends React.Component {
     });
   };
 
-  updateTodoToShow = s => {
+  updateTodoToShow = (s) => {
     this.setState({
-      todoToShow: s
+      todoToShow: s,
     });
   };
 
-  handleDeleteTodo = id => {
-this.setState({
-  todos:this.state.todos.filter(todo => todo.id != id)
-})
-  }
-
-  removeallComplete = id => [
+  handleDeleteTodo = (id) => {
     this.setState({
-      todos:this.state.todos.filter(todo => !todo.complete)
-    })
-  ]
+      todos: this.state.todos.filter((todo) => todo.id != id),
+    });
+  };
+
+  removeallComplete = (id) => [
+    this.setState({
+      todos: this.state.todos.filter((todo) => !todo.complete),
+    }),
+  ];
 
   render() {
     let todos = [];
@@ -55,31 +55,40 @@ this.setState({
     if (this.state.todoToShow === "all") {
       todos = this.state.todos;
     } else if (this.state.todoToShow === "active") {
-      todos = this.state.todos.filter(todo => !todo.complete);
+      todos = this.state.todos.filter((todo) => !todo.complete);
     } else if (this.state.todoToShow === "complete") {
-      todos = this.state.todos.filter(todo => todo.complete);
+      todos = this.state.todos.filter((todo) => todo.complete);
     }
 
     return (
-      <div>
-        <TodoForm onSubmit={this.addTodo} />
-        
-        {todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            toggleComplete={() => this.toggleComplete(todo.id)}
-            onDelete={() => this.handleDeleteTodo(todo.id)}
-            todo={todo}
-          />
-        ))}
-        todos left: {this.state.todos.filter(todo => !todo.complete).length}
-        
-        <button onClick={() => this.updateTodoToShow("all")}>All</button>
-        <button onClick={() => this.updateTodoToShow("active")}>Active</button>
-        <button onClick={() => this.updateTodoToShow("complete")}>Complete</button>
-        <button onClick={this.removeallComplete}>Remove all Completed</button>
-         
-         
+      <div className="wholediv">
+        <div>
+          <TodoForm onSubmit={this.addTodo} />
+          {todos.map((todo) => (
+            <Todo
+              key={todo.id}
+              toggleComplete={() => this.toggleComplete(todo.id)}
+              onDelete={() => this.handleDeleteTodo(todo.id)}
+              todo={todo}
+            />
+          ))}
+          todos left: {this.state.todos.filter((todo) => !todo.complete).length}
+        </div>
+        <div>
+          <button
+            className="button"
+            onClick={() => this.updateTodoToShow("all")}
+          >
+            All
+          </button>
+          <button onClick={() => this.updateTodoToShow("active")}>
+            Active
+          </button>
+          <button onClick={() => this.updateTodoToShow("complete")}>
+            Complete
+          </button>
+          <button onClick={this.removeallComplete}>Remove all Completed</button>
+        </div>
       </div>
     );
   }
