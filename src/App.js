@@ -63,7 +63,7 @@ class App extends React.Component {
     return (
       <div className="wholediv">
         <div>
-          <TodoForm onSubmit={this.addTodo} />
+          <TodoForm  className="todo" onSubmit={this.addTodo} />
           {todos.map((todo) => (
             <Todo
               key={todo.id}
@@ -87,7 +87,7 @@ class App extends React.Component {
           <button className="button" onClick={() => this.updateTodoToShow("complete")}>
             Complete
           </button>
-          <button className="button" onClick={this.removeallComplete}>Remove all Completed</button>
+          <button className="button" onClick={this.removeallComplete}>Remove all</button>
         </div>
       </div>
     );

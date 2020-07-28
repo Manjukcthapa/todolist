@@ -27,6 +27,7 @@ outline:none;
   height:50px;
   width:80px;
   border-radius: 5px;
+  margin-left:30px;
   border:0;
   background-color:rgb(202,156,24);
   cursor:pointer;
@@ -34,11 +35,13 @@ outline:none;
   color:white;
 }
 
+
+
 .wholediv{
   display:flex;
   justify-content: center;
   flex-direction:column;
-  margin-left: 400px;
+  margin-left: 300px;
  margin-top: 100px;
  
 }
