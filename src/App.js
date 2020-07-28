@@ -81,13 +81,13 @@ class App extends React.Component {
           >
             All
           </button>
-          <button onClick={() => this.updateTodoToShow("active")}>
+          <button  className="button" onClick={() => this.updateTodoToShow("active")}>
             Active
           </button>
-          <button onClick={() => this.updateTodoToShow("complete")}>
+          <button className="button" onClick={() => this.updateTodoToShow("complete")}>
             Complete
           </button>
-          <button onClick={this.removeallComplete}>Remove all Completed</button>
+          <button className="button" onClick={this.removeallComplete}>Remove all Completed</button>
         </div>
       </div>
     );
