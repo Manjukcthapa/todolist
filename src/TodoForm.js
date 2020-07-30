@@ -35,7 +35,7 @@ handleSubmit = (e) => {
           onChange={this.handleChange}
           placeholder="todo..."
         />
-        <button onClick={this.handleSubmit}>Submit</button>
+        <button  className="formbutton" onClick={this.handleSubmit}>Submit</button>
         </form>
       </div>
     );
